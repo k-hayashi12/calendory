@@ -1,0 +1,2 @@
+class GroupPhoto < ApplicationRecord
+end
