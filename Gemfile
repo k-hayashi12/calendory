@@ -63,3 +63,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Gemファイルを記述
 gem 'devise'
+gem "bootstrap-sass"
+gem "jquery-rails"
+gem 'carrierwave'
+gem 'dropzonejs-rails'
+gem 'rmagick'
+gem "pry-rails"
+gem 'simple_calendar'
+gem 'ransack'
