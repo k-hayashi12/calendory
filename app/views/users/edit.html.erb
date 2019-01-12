@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-1">
+		</div>
+
+		<div class="col-lg-9">
+			<h2>編集画面</h2><br>
+				<%= form_for(@user) do |f| %>
+					<laber>画像</laber><%= f.file_field :user_image_id %>
+					<label>氏名</label><%= f.text_field :name %><br/>
+					<label>メールアドレス</label><%= f.text_field :email, style: "width: 300px;" %><br/>
+					<label>検索用ID</label><%= f.text_field :search_number %><br/>
+
+					<%= f.submit "編集完了", class: "btn btn-primary"%>
+				<% end %>
+		</div>
+	</div>
+</div>
