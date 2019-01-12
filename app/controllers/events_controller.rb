@@ -1,15 +1,17 @@
 class EventsController < ApplicationController
 
 	def new
-		@events = Event.new
+		@event = Event.new
 	end
 
 	def show
 	end
 
 	def create
-		Event.create(event_parameter)
-		redirect_to user_path
+		@event = Event.new(event_parameter)
+		@event.user_id = current_user.id
+		@event.save
+		redirect_to user_path(@event.user_id)
 	end
 
 	def edit

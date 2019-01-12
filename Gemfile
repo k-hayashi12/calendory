@@ -71,3 +71,4 @@ gem 'rmagick'
 gem "pry-rails"
 gem 'simple_calendar'
 gem 'ransack'
+# gem 'jquery-ui-rails'
