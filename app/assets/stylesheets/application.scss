@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require simple_calendar
  *= require_tree .
  *= require_self
  */
@@ -28,4 +29,39 @@
 	content: "";
 	display: block;
 	clear: both;
+}
+
+/* トップページに関する指定 */
+.top{
+	width: 100vw;
+  	height: 100vh;
+  	background: rgba(255,255,255,0.5);
+	background-image: url("top.png");
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	color: white;
+}
+
+.introduction{
+	text-align: center;
+	padding-top: 150px;
+	width: 800px;
+  	margin: auto;
+}
+
+.login{
+	width: 300px;
+	margin: auto;
+	background-color:rgba(230,228,221,0.7);
+  	border-radius: 5px;
+}
+
+/* body全体に関する指定 */
+body{
+	background-image: url("backgroud.png");
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
 }
