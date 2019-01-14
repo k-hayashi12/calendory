@@ -5,10 +5,11 @@ class EventsController < ApplicationController
 	end
 
 	def show
+		@event = Event.find(params[:id])
 	end
 
 	def create
-		@event = Event.new(event_parameter)
+		@event = Event.new(event_params)
 		@event.user_id = current_user.id
 		@event.save
 		redirect_to user_path(@event.user_id)
@@ -26,7 +27,7 @@ class EventsController < ApplicationController
 
 	private
 
-	def event_parameter
+	def event_params
 		params.require(:event).permit(:event_title, :start_time)
 	end
 
