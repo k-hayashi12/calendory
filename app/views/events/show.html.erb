@@ -1,0 +1,19 @@
+<h1>Event#show</h1>
+
+<div class ="container">
+	<div class ="row">
+		<div class ="col-lg-9">
+			<h3>イベント名</h3>
+			<p><%= @event.event_title %></p>
+			<h3>アルバム</h3>
+			<h3>日記一覧</h3>
+			<% @event.comments.each do |comment| %>
+				<%= comment.comment %></br>
+			<% end %>
+		</div>
+		<div class ="col-lg-3">
+			<%= link_to "イベント編集", edit_event_path, class: "btn btn-default" %>
+			<%= link_to "写真を追加", new_photo_path, class: "btn btn-default" %>
+			<%= link_to "日記を書く", new_comment_path, class: "btn btn-default" %>
+	</div>
+</div>
