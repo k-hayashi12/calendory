@@ -6,7 +6,8 @@ class CommentsController < ApplicationController
 	end
 
 	def show
-		@event = Event.find(params[:id])
+		@event = Event.find(params[:event_id])
+		@comment = Comment.find(params[:id])
 	end
 
 	def create
@@ -18,9 +19,13 @@ class CommentsController < ApplicationController
 	end
 
 	def edit
+		@comment = Comment.find(params[:id])
 	end
 
 	def update
+		@comment = Comment.find(params[:id])
+		@comment.update(comment_params)
+		redirect_to event_path(@comment.event_id)
 	end
 
 	def destroy
@@ -29,7 +34,7 @@ class CommentsController < ApplicationController
 	private
 
 	def comment_params
-		params.permit(:comment)
+		params.permit(:comment, user: [:name, :user_image_id])
 	end
 
 end

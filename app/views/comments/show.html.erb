@@ -1,0 +1,15 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-1">
+		</div>
+
+		<div class="col-lg-9">
+			<%= image_tag @event.user.user_image_id.to_s, class: "user_image" %>
+			<%= @event.user.name %></br>
+			<%= @comment.comment %>
+		</div>
+
+	</div>
+</div>
+<%= link_to "日記を編集",  edit_event_comment_path, class: "btn btn-default" %>
+<%= link_to '戻る', :back, class: "btn btn-default"%>

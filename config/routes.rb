@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, only:[:show, :edit, :update]
   resources :events do
      resources :comments, only:[:new, :show, :create, :edit, :update, :destroy]
+     resources :photos, only:[:new, :create, :index, :destroy]
    end
   resources :photos, only:[:new, :create, :index, :destroy]
   resources :comments, only:[:new, :show, :create, :edit, :update, :destroy]
