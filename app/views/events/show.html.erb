@@ -14,6 +14,6 @@
 		<div class ="col-lg-3">
 			<%= link_to "イベント編集", edit_event_path, class: "btn btn-default" %>
 			<%= link_to "写真を追加", new_photo_path, class: "btn btn-default" %>
-			<%= link_to "日記を書く", new_comment_path, class: "btn btn-default" %>
+			<%= link_to "日記を書く", new_event_comment_path(@event), class: "btn btn-default" %>
 	</div>
 </div>

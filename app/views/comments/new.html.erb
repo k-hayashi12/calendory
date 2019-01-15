@@ -1,7 +1,7 @@
 <h1>Comment#new</h1>
 
 <h3>日記を書く</h3>
-<%= form_with(model: @comment, local: true) do |form| %>
+<%= form_with url: event_comments_path(@event.id), method: :post  do |form| %>
 
   <div class="event_title">
     <%= form.label :内容 %>

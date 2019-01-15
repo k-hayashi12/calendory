@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
 
 	def new
+		@event = Event.find(params[:event_id])
 		@comment = Comment.new
 	end
 
@@ -9,8 +10,9 @@ class CommentsController < ApplicationController
 	end
 
 	def create
+		@event = Event.find(params[:event_id])
 		@comment = Comment.new(comment_params)
-		@comment.event_id = 5
+		@comment.event_id = @event.id
 		@comment.save
 		redirect_to event_path(@comment.event_id)
 	end
@@ -27,7 +29,7 @@ class CommentsController < ApplicationController
 	private
 
 	def comment_params
-		params.require(:comment).permit(:comment)
+		params.permit(:comment)
 	end
 
 end
