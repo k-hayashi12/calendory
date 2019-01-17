@@ -1,0 +1,19 @@
+;<h1>Event#show</h1>
+
+<div class ="container">
+	<div class ="row">
+		<div class ="col-lg-9">
+			<h3>イベント名</h3>
+			<p><%= @group_event.group_event_title %></p>
+			<h3>アルバム</h3>
+			<% @group_event.group_photos.each do |photo| %>
+				<%= image_tag photo.group_photo_image_id.to_s, class: "user_image" %>
+			<% end %>
+		</div>
+		<div class ="col-lg-3">
+			<%= link_to "イベント編集", edit_group_event_path, class: "btn btn-default" %>
+			<%= link_to "写真を追加", new_group_event_group_photo_path(@group_event), class: "btn btn-default" %>
+			<%= link_to "日記を書く", new_group_event_group_comment_path(@group_event), class: "btn btn-default" %>
+	</div>
+	<%= link_to '戻る', :back , class: "btn btn-default" %>
+</div>

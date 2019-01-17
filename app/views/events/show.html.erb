@@ -6,8 +6,8 @@
 			<h3>イベント名</h3>
 			<p><%= @event.event_title %></p>
 			<h3>アルバム</h3>
-			<% @event.photos.each do |p| %>
-				<%= image_tag p.photo_image_id.to_s, class: "user_image" %>
+			<% @event.photos.each do |photo| %>
+				<%= image_tag photo.photo_image_id.to_s, class: "user_image" %>
 			<% end %>
 			<h3>日記一覧</h3>
 			<% @event.comments.each do |comment| %>
