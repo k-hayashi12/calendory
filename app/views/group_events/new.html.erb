@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+        <div class="col-lg-1">
+        </div>
+
+        <div class="col-lg-9">
+          <%= form_with(model: @group_event, url: group_group_events_path, local: true) do |form| %>
+
+            <div class="group_event_title">
+              <%= form.label :イベント名 %>
+              <%= form.text_field :group_event_title %>
+            </div>
+
+            <div class="time">
+              <%= form.label :日付 %>
+              <%= form.date_select :start_time %>
+            </div>
+
+            <div class="submit">
+              <%= form.submit %>
+            </div>
+          <% end %>
+      </div>
+
+  </div>
+</div>

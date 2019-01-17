@@ -1,0 +1,25 @@
+<div class="container">
+	<div class="row">
+
+		<div class="col-lg-3">
+			<h3>グループメンバー</h3>
+		</div>
+
+		<div class="col-lg-9">
+			<h2><%= @group.group_name %></h2>
+			<%= link_to "カレンダー名を編集", edit_group_path %>
+			<%= link_to "イベントを作成する", new_group_group_event_path(@group) %>
+
+			<%= month_calendar events: @group_events do |date, group_events| %>
+  				<%= date.day %>
+
+		  		<% group_events.each do |group_event| %>
+   					<div>
+      					<%= link_to group_event.group_event_title, group_event %>
+   					</div>
+ 				<% end %>
+			<% end %>
+		</div>
+
+	</div>
+</div>

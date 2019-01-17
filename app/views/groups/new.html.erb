@@ -1,0 +1,7 @@
+<h1>Group#new</h1>
+    <%= form_for @group, url: groups_path, html: { method: :post } do |f| %>
+    	<%= f.label "グループカレンダー名" %>
+        <%= f.text_field :group_name %>
+
+        <%= f.submit "登録" %>
+    <% end %>

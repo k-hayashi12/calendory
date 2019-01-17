@@ -1,33 +1,44 @@
 class CommentsController < ApplicationController
 
 	def new
+		@event = Event.find(params[:event_id])
 		@comment = Comment.new
 	end
 
 	def show
-		@event = Event.find(params[:id])
+		@event = Event.find(params[:event_id])
+		@comment = Comment.find(params[:id])
 	end
 
 	def create
+		@event = Event.find(params[:event_id])
 		@comment = Comment.new(comment_params)
-		@comment.event_id = 5
+		@comment.event_id = @event.id
 		@comment.save
 		redirect_to event_path(@comment.event_id)
 	end
 
 	def edit
+		@comment = Comment.find(params[:id])
 	end
 
 	def update
+		@comment = Comment.find(params[:id])
+		@comment.update(comment_params)
+		redirect_to event_path(@comment.event_id)
 	end
 
 	def destroy
+		@event = Event.find(params[:event_id])
+		@comment = Comment.find(params[:id])
+		@comment.destroy
+		redirect_to event_path(@event.id)
 	end
 
 	private
 
 	def comment_params
-		params.require(:comment).permit(:comment)
+		params.permit(:comment, user: [:name, :user_image_id])
 	end
 
 end
