@@ -31,6 +31,27 @@
 	clear: both;
 }
 
+/* ヘッダー　*/
+header {
+	width: 100%;
+	height: 70px;
+}
+
+.logo {
+	height: 65px;
+	width: 20%;
+	background: url("logo.png") no-repeat;
+	background-size: contain;
+	position: absolute;
+	top: 5px;
+	left: 140px;
+}
+
+footer {
+	width: 100%;
+	height: 50px;
+}
+
 /* トップページに関する指定 */
 .top{
 	width: 100vw;
@@ -58,7 +79,7 @@
   	border-radius: 5px;
 }
 
-/* body全体に関する指定 */
+/* 背景に関する指定 */
 body{
 	background-image: url("backgroud.png");
 	background-size: cover;
@@ -66,9 +87,138 @@ body{
 	background-attachment: fixed;
 }
 
+/* user詳細ページ */
 .user_image{
 	padding: 10px 15px 0px 15px;
-	margin: 50px 0px;
+	margin: 20px 0px;
 	width: 250px;
+	height: 250px;
+}
+
+.edit_user {
+	text-align: center;
+}
+
+.group {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.calendar {
+	text-align: center;
+}
+
+.previous {
+	float: left;
+	font-size: 15px;
+}
+
+.next {
+	float: right;
+	font-size: 15px;
+}
+
+.calendar-heading {
+	text-align: center;
+	font-size: 20px;
+}
+
+.calendar-title {
+	margin-right: 28px;
+}
+
+.calendar_title {
+	text-align: center;
+	display: inline-block;
+	position: relative;
+	padding: 0.25em 1em;
+	border-top: solid 2px black;
+	border-bottom: solid 2px black;
+}
+
+.calendar_title:before, .calendar_title:after {
+	content: '';
+	position: absolute;
+	top: -7px;
+	width: 2px;
+	  height: -webkit-calc(100% + 14px);
+	height: calc(100% + 14px);
+	background-color: black;
+}
+
+.calendar_title:before {left: 7px;}
+.calendar_title:after {right: 7px;}
+
+
+.edit_calendar {
+	text-align: center;
+}
+
+.mk_group {
+	text-align: center;
+}
+
+/* イベント詳細ページ */
+
+.event_title {
+	text-align: center;
+	font-size: 20px;
+	font-weight: 900;
+}
+
+.edit_event {
+	margin-top: 70px;
+	margin-left: 70px;
+}
+
+.add_photo {
+	margin-top: 70px;
+	margin-left: 70px;
+}
+
+.open_album {
+	margin-top: 10px;
+	margin-left: 70px;
+}
+
+.add_comment {
+	margin-top: 540px;
+	margin-left: 70px;
+}
+
+.back_buttom{
+	margin-left: 50px;
+}
+
+.index {
+	border-bottom: 3px solid #000000;
+}
+.index span {
+	color: #ffffff;
+	font-size: 16px;
+	line-height: 20px;
+	position: relative;
+	background: #000000;
+	display: inline-block;
+	padding: 10px;
+}
+.index span:after {
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 0;
+	height: 0;
+	border-width: 0 10px 40px 0;
+	border-style: solid;
+	border-color: transparent;
+	border-bottom-color: #000000;
+}
+
+.album_image{
+	padding-right: 10px;
+	padding-left: 10px;
+	margin: 10px 0px;
+	width: 270px;
 	height: 250px;
 }

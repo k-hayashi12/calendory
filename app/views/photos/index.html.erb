@@ -1,0 +1,4 @@
+<% @event.photos.each do |photo| %>
+<%= image_tag photo.photo_image_id.to_s, class: "album_image" %>
+<%= link_to "削除", photo_path(@event), method: :delete, "data-confirm" => "本当に削除しますか", class: "btn btn-danger" %>
+<% end %>

@@ -3,12 +3,15 @@
 
 		<div class="col-lg-3">
 			<h3>グループメンバー</h3>
+			<%= link_to "メンバーを招待する", group_group_users_path(@group) %>
 		</div>
 
 		<div class="col-lg-9">
-			<h2><%= @group.group_name %></h2>
-			<%= link_to "カレンダー名を編集", edit_group_path %>
-			<%= link_to "イベントを作成する", new_group_group_event_path(@group) %>
+			<div class="calendar"><h2 class="calendar_title"><%= @group.group_name %></h2></div>
+			<div class="edit_calendar">
+				<%= link_to "カレンダー名を編集", edit_group_path %>
+				<%= link_to "イベントを作成する", new_group_group_event_path(@group) %>
+			</div>
 
 			<%= month_calendar events: @group_events do |date, group_events| %>
   				<%= date.day %>

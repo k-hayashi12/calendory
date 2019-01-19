@@ -3,7 +3,11 @@ class GroupUsersController < ApplicationController
 	def new
 	end
 
-	def update
+	def create
+	end
+
+	def index
+		@users = User.search(params[:search])
 	end
 
 	def destroy

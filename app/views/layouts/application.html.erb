@@ -9,7 +9,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <header>
+    <div><%= link_to "", user_path(current_user), class: "logo" %></div>
+  </header>
+
   <body>
     <%= yield %>
   </body>
+
+  <footer>
+  </footer>
+
 </html>

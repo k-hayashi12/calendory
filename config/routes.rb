@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :comments, only:[:new, :show, :create, :edit, :update, :destroy]
   resources :groups, only:[:new, :show, :create, :edit, :update, :destroy] do
     resources :group_events, only:[:new, :create]
+    resources :group_users, only:[:new, :create, :index, :destroy]
   end
   resources :group_events, only:[:show, :edit, :update, :destroy] do
     resources :group_photos, only:[:new, :create, :index, :destroy]
