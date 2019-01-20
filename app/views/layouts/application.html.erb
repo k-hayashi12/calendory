@@ -7,10 +7,25 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="slider-pro.css" media="screen" />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/html5shiv.js"></script>
+    <![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jquery.sliderPro.min.js"></script>
   </head>
 
   <header>
-    <div><%= link_to "", user_path(current_user), class: "logo" %></div>
+    <div class="col-md-11">
+      <div class="logo"><%= link_to, user_path(current_user.id) %></div>
+      <nav>
+        <ul class="header-list">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-link" %>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <body>

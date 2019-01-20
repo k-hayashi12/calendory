@@ -1,14 +1,25 @@
 <div class ="container">
 	<div class ="row">
 		<div class ="col-lg-9">
-			<h3>イベント名</h3>
+			<h3 class="index"><span>イベント名</span></h3>
 			<p><%= @group_event.group_event_title %></p>
-			<h3>アルバム</h3>
-			<% @group_event.group_photos.each do |photo| %>
-				<%= image_tag photo.group_photo_image_id.to_s, class: "user_image" %>
-			<% end %>
+			<h3 class="index"><span>アルバム</span></h3>
+			<div id="thumb-h" class="slider-pro">
+			  <div class="sp-slides">
+			  	<% @group_event.group_photos.each do |photo| %>
+			    	<div class="sp-slide">
+					<%= image_tag photo.group_photo_image_id.to_s, class: "sp-image slider-photo" %>
+					</div>
+				<% end %>
+			  </div>
+			  <div class="sp-thumbnails">
+			    <% @group_event.group_photos.each do |photo| %>
+					<%= image_tag photo.group_photo_image_id.to_s, class: "sp-thumbnail" %>
+				<% end %>
+			  </div>
+			</div>
 			<%= link_to "アルバム開く", group_event_group_photos_path(@group_event) %>
-			<h3>日記</h3>
+			<h3 class="index"><span>日記一覧</span></h3>
 		</div>
 		<div class ="col-lg-3">
 			<%= link_to "イベント編集", edit_group_event_path, class: "btn btn-default" %>

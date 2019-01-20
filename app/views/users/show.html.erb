@@ -17,10 +17,15 @@
 
 			<table>
 				<thead>
-					<h4 class="group"><strong>参加中のカレンダー</strong></h4>
+					<h3 class="group"><strong>参加中のカレンダー</strong></h3>
+					<table class="table table-hover">
+						<% @group_users.each do |groupe| %>
+						<tr class="group_title_list">
+							<td><%= link_to groupe.group.group_name, group_path(groupe.group.id) %></td>
+						</tr>
+						<% end %>
+					</table>
 				</thead>
-				<tbody>
-				</tbody>
 			</table>
 		</div>
 
@@ -44,6 +49,3 @@
 
 	</div>
 </div>
-
-
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-block" %>

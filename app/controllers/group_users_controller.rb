@@ -13,4 +13,9 @@ class GroupUsersController < ApplicationController
 	def destroy
 	end
 
+	private
+	def search_params
+		# params.require(:search).permit(:name, :email, :search_number)
+    end
+
 end

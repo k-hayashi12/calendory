@@ -1,12 +1,25 @@
+<%= link_to '戻る', :back , class: "back_buttom btn btn-default" %>
+
 <div class ="container">
 	<div class ="row">
 		<div class ="col-lg-9">
 			<h3 class="index"><span>イベント名</span></h3>
 			<p class= "event_title"><%= @event.event_title %></p>
 			<h3 class="index"><span>アルバム</span></h3>
-			<% @event.photos.each do |photo| %>
-				<%= image_tag photo.photo_image_id.to_s, class: "album_image" %>
-			<% end %>
+			<div id="thumb-h" class="slider-pro">
+			  <div class="sp-slides">
+			  	<% @event.photos.each do |photo| %>
+			    	<div class="sp-slide">
+					<%= image_tag photo.photo_image_id.to_s, class: "sp-image slider-photo" %>
+					</div>
+				<% end %>
+			  </div>
+			  <div class="sp-thumbnails">
+			    <% @event.photos.each do |photo| %>
+					<%= image_tag photo.photo_image_id.to_s, class: "sp-thumbnail" %>
+				<% end %>
+			  </div>
+			</div>
 			<h3 class="index"><span>日記一覧</span></h3>
 			<% @event.comments.each do |comment| %>
 				<%= link_to comment.comment, event_comment_path(event_id: @event.id, id: comment.id) %></br>
@@ -20,5 +33,3 @@
 		</div>
 	</div>
 </div>
-
-<%= link_to '戻る', :back , class: "back_buttom btn btn-default" %>

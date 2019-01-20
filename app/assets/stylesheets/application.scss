@@ -31,20 +31,32 @@
 	clear: both;
 }
 
-/* ヘッダー　*/
+/* ヘッダーとフッター　*/
 header {
 	width: 100%;
 	height: 70px;
+	background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
 }
 
 .logo {
-	height: 65px;
+	margin-top: 3px;
+	height: 60px;
 	width: 20%;
 	background: url("logo.png") no-repeat;
 	background-size: contain;
 	position: absolute;
 	top: 5px;
 	left: 140px;
+}
+
+.header-list {
+	margin-top: 20px;
+	text-align: right;
+}
+
+.header-link {
+	text-align: right;
+	font-size: 25px;
 }
 
 footer {
@@ -90,7 +102,7 @@ body{
 /* user詳細ページ */
 .user_image{
 	padding: 10px 15px 0px 15px;
-	margin: 20px 0px;
+	margin: 20px 5px;
 	width: 250px;
 	height: 250px;
 }
@@ -101,6 +113,11 @@ body{
 
 .group {
 	margin-top: 20px;
+	text-align: center;
+	background: linear-gradient(transparent 50%, #99CCFF 50%);
+}
+
+.group_title_list {
 	text-align: center;
 }
 
@@ -182,7 +199,7 @@ body{
 }
 
 .add_comment {
-	margin-top: 540px;
+	margin-top: 350px;
 	margin-left: 70px;
 }
 
@@ -193,6 +210,7 @@ body{
 .index {
 	border-bottom: 3px solid #000000;
 }
+
 .index span {
 	color: #ffffff;
 	font-size: 16px;
@@ -202,6 +220,7 @@ body{
 	display: inline-block;
 	padding: 10px;
 }
+
 .index span:after {
 	content: " ";
 	position: absolute;
@@ -215,10 +234,40 @@ body{
 	border-bottom-color: #000000;
 }
 
-.album_image{
-	padding-right: 10px;
-	padding-left: 10px;
-	margin: 10px 0px;
-	width: 270px;
-	height: 250px;
+.album_image {
+	padding: 10px 15px 0px 15px;
+	margin: 20px 0px;
+	width: 320px;
+	height: 270px;
+}
+
+/* 検索結果の画像サイズ */
+.search_icon {
+	padding: 10px 15px 0px 15px;
+	margin: 20px 0px;
+	width: 130px;
+	height: 110px;
+}
+
+/* グループトップページ */
+
+.icon {
+	margin-left: 35px;
+	width: 60px;
+	height: 60px;
+}
+
+.group_user_name {
+	padding-left: 20px;
+	text-align: center;
+	font-weight: 600;
+}
+
+.search-link {
+	margin: 20px 0 0 60px;
+}
+
+.close {
+	margin-left: 15px;
+	font-size: 15px;
 }

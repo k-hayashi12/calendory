@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'root#top'
-
+  get 'user_serch' => 'group_users#index', as: 'users'
   devise_for :users
 
   resources :users, only:[:show, :edit, :update]
