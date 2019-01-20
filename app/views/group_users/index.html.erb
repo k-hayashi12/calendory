@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-1">
+		</div>
+
+		<div class="col-lg-9">
+				<%= form_tag users_path, :method => 'get' do %>
+					<p>
+				    <%= text_field_tag :search, params[:search] %>
+				    <%= submit_tag "検索", :search_number => nil, class: "btn btn-primary" %>
+					</p>
+				<% end %>
+
+			<table class: "">
+				<% if @users %>
+				<% @users.each do |user| %>
+					<th><%= image_tag user.user_image_id.to_s, class: "search_icon" %></th>
+					<td><%= user.name %></td>
+					<td><%= submit_tag "招待", class: "btn btn-danger" %></td>
+				<% end %>
+				<% end %>
+
+		</div>
+
+	</div>
+</div>

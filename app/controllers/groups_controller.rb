@@ -16,6 +16,7 @@ class GroupsController < ApplicationController
 		@group = Group.find(params[:id])
 		@group_events = GroupEvent.where(group_id: @group)
 		@user = @group.users
+		@group_users = GroupeUser.where(group_id: @group.id)
 	end
 
 	def edit

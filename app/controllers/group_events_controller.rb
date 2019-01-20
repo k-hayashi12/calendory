@@ -23,7 +23,7 @@ class GroupEventsController < ApplicationController
 	def update
 		@group_event = GroupEvent.find(params[:id])
 		@group_event.update(group_event_params)
-		redirect_to group_event_path(@group_event)
+		redirect_to group_event_path(@group_event.id)
 	end
 
 	def destroy

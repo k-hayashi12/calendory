@@ -2,13 +2,29 @@
 	<div class="row">
 
 		<div class="col-lg-3">
-			<h3>グループメンバー</h3>
+			<table>
+				<thead>
+					<h3 class="group"><strong>参加中のメンバー</strong></h3>
+					<table">
+						<tr>
+							<% @group_users.each do |groupe| %>
+								<td><%= image_tag groupe.user.user_image_id.to_s, class: "icon" %></td>
+								<td class="group_user_name"><%= groupe.user.name %></td>
+								<td><%= submit_tag "退室", :class => "close"%></td>
+							<% end %>
+					   </tr>
+					</table>
+				</thead>
+			</table>
+			<%= link_to "メンバーを招待する", group_group_users_path(@group), class: "search-link btn btn-success" %>
 		</div>
 
 		<div class="col-lg-9">
-			<h2><%= @group.group_name %></h2>
-			<%= link_to "カレンダー名を編集", edit_group_path %>
-			<%= link_to "イベントを作成する", new_group_group_event_path(@group) %>
+			<div class="calendar"><h2 class="calendar_title"><%= @group.group_name %></h2></div>
+			<div class="edit_calendar">
+				<%= link_to "カレンダー名を編集", edit_group_path, class: "btn btn-info" %>
+				<%= link_to "イベントを作成する", new_group_group_event_path(@group), class: "btn btn-danger" %>
+			</div>
 
 			<%= month_calendar events: @group_events do |date, group_events| %>
   				<%= date.day %>

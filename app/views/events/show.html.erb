@@ -1,23 +1,35 @@
-<h1>Event#show</h1>
+<%= link_to '戻る', :back , class: "back_buttom btn btn-default" %>
 
 <div class ="container">
 	<div class ="row">
 		<div class ="col-lg-9">
-			<h3>イベント名</h3>
-			<p><%= @event.event_title %></p>
-			<h3>アルバム</h3>
-			<% @event.photos.each do |photo| %>
-				<%= image_tag photo.photo_image_id.to_s, class: "user_image" %>
-			<% end %>
-			<h3>日記一覧</h3>
+			<h3 class="index"><span>イベント名</span></h3>
+			<p class= "event_title"><%= @event.event_title %></p>
+			<h3 class="index"><span>アルバム</span></h3>
+			<div id="thumb-h" class="slider-pro">
+			  <div class="sp-slides">
+			  	<% @event.photos.each do |photo| %>
+			    	<div class="sp-slide">
+					<%= image_tag photo.photo_image_id.to_s, class: "sp-image slider-photo" %>
+					</div>
+				<% end %>
+			  </div>
+			  <div class="sp-thumbnails">
+			    <% @event.photos.each do |photo| %>
+					<%= image_tag photo.photo_image_id.to_s, class: "sp-thumbnail" %>
+				<% end %>
+			  </div>
+			</div>
+			<h3 class="index"><span>日記一覧</span></h3>
 			<% @event.comments.each do |comment| %>
 				<%= link_to comment.comment, event_comment_path(event_id: @event.id, id: comment.id) %></br>
 			<% end %>
 		</div>
 		<div class ="col-lg-3">
-			<%= link_to "イベント編集", edit_event_path, class: "btn btn-default" %>
-			<%= link_to "写真を追加", new_event_photo_path(@event), class: "btn btn-default" %>
-			<%= link_to "日記を書く", new_event_comment_path(@event), class: "btn btn-default" %>
+			<%= link_to "イベント編集", edit_event_path, class: "edit_event btn btn-default" %>
+			<%= link_to "写真を追加", new_event_photo_path(@event), class: "add_photo btn btn-default" %>
+			<%= link_to "アルバムを開く", event_photos_path(@event), class: "open_album btn btn-default" %>
+			<%= link_to "日記を書く", new_event_comment_path(@event), class: "add_comment btn btn-default" %>
+		</div>
 	</div>
-	<%= link_to '戻る', :back , class: "btn btn-default" %>
 </div>

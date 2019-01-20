@@ -9,4 +9,12 @@ class User < ApplicationRecord
          has_many :events, dependent: :destroy
          has_many :groupe_users, dependent: :destroy
          has_many :groups, through: :group_users
+
+
+  def self.search(search) #self.でクラスメソッドとしている
+    if search # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索
+      User.where(['search_number LIKE ?', "#{search}"])
+    end
+  end
+
 end

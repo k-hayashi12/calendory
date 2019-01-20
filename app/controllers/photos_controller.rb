@@ -14,9 +14,14 @@ class PhotosController < ApplicationController
 	end
 
 	def index
+		@event = Event.find(params[:event_id])
 	end
 
 	def destroy
+		@event = Event.find(params[:event_id])
+		@photo = Photo.find(params[:id])
+		@photo.destroy
+		redirect_to event_path(@event.id)
 	end
 
 	private

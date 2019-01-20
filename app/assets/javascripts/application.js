@@ -16,3 +16,23 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
+
+
+/* slider proの設定 */
+
+$( document ).ready(function( $ ) {
+  $('#thumb-h').sliderPro({
+    width:600,//横幅
+    buttons: false,//ナビゲーションボタン
+    shuffle: true,//スライドのシャッフル
+    thumbnailWidth: 200,//サムネイルの横幅
+    thumbnailHeight: 60,//サムネイルの縦幅
+    slideDistance:0,//スライド同士の距離
+    breakpoints: {
+      480: {//表示方法を変えるサイズ
+        thumbnailWidth: 110,
+        thumbnailHeight: 40
+      }
+    }
+  });
+});
