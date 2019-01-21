@@ -16,6 +16,15 @@ class UsersController < ApplicationController
 	  	redirect_to user_path(@user.id)
 	end
 
+	def index
+		@users = User.search(params[:search])
+	end
+
+	def group_show
+		@user = User.find(params[:id])
+		@group_users = GroupeUser.where(user_id: current_user)
+	end
+
 	private
 	def user_params
 		params.require(:user).permit(:name, :email, :search_number, :user_image_id)

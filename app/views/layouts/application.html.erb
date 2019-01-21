@@ -17,16 +17,19 @@
     <script src="jquery.sliderPro.min.js"></script>
   </head>
 
+  <% if user_signed_in? %>
   <header>
     <div class="col-md-11">
-      <div class="logo"><%= link_to, user_path(current_user.id) %></div>
+      <div class="logo"></div>
       <nav>
-        <ul class="header-list">
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-link" %>
-        </ul>
+          <ul class="header-list">
+            <%= link_to "マイページ", user_path(current_user), class: "header-link"  %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-link" %>
+          </ul>
       </nav>
     </div>
   </header>
+  <% end %>
 
   <body>
     <%= yield %>

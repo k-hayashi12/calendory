@@ -6,17 +6,16 @@
 				<thead>
 					<h3 class="group"><strong>参加中のメンバー</strong></h3>
 					<table">
-						<tr>
-							<% @group_users.each do |groupe| %>
+						<% @group_users.each do |groupe| %>
+							<tr>
 								<td><%= image_tag groupe.user.user_image_id.to_s, class: "icon" %></td>
 								<td class="group_user_name"><%= groupe.user.name %></td>
-								<td><%= submit_tag "退室", :class => "close"%></td>
-							<% end %>
-					   </tr>
+								<td><%= link_to "退室", group_users_destroy_path(group_id: @group.id, user_id: groupe.user.id), method: :delete, "data-confirm" => "本当に削除しますか", class: "close" %></td>
+					   		</tr>
+					   	<% end %>
 					</table>
 				</thead>
 			</table>
-			<%= link_to "メンバーを招待する", group_group_users_path(@group), class: "search-link btn btn-success" %>
 		</div>
 
 		<div class="col-lg-9">

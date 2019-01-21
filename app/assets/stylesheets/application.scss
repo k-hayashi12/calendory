@@ -39,7 +39,7 @@ header {
 }
 
 .logo {
-	margin-top: 3px;
+	margin: 3px 0 0 15px;
 	height: 60px;
 	width: 20%;
 	background: url("logo.png") no-repeat;
@@ -56,6 +56,7 @@ header {
 
 .header-link {
 	text-align: right;
+	margin-left: 30px;
 	font-size: 25px;
 }
 
@@ -175,6 +176,10 @@ body{
 	text-align: center;
 }
 
+.group_buttom {
+	margin: 50px;
+}
+
 /* イベント詳細ページ */
 
 .event_title {
@@ -235,10 +240,10 @@ body{
 }
 
 .album_image {
-	padding: 10px 15px 0px 15px;
-	margin: 20px 0px;
-	width: 320px;
-	height: 270px;
+    padding: 10px 0px 0px 15px;
+    margin: 20px 0px;
+    width: 437px;
+    height: 330px;
 }
 
 /* 検索結果の画像サイズ */
@@ -270,4 +275,36 @@ body{
 .close {
 	margin-left: 15px;
 	font-size: 15px;
+}
+
+/* 入力フォーム　*/
+
+.form {
+	margin: 250px 0 50px 250px;
+}
+
+.form1 {
+	width: 300px;
+	margin: 10px 0 0 100px;
+}
+
+.form2 {
+	width: 300px;
+	margin: 30px 0 0 30px;
+}
+
+.form3 {
+	width: 300px;
+	margin: 30px 0 0 70px;
+}
+
+.form4 {
+	margin-top: 50px;
+}
+
+/* アルバム　*/
+
+
+.delete {
+	margin-top: 15px;
 }
