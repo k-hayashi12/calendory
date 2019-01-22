@@ -16,7 +16,7 @@
 				<% @users.each do |user| %>
 					<th><%= image_tag user.user_image_id.to_s, class: "search_icon" %></th>
 					<td><%= user.name %></td>
-					<td><%= submit_tag "招待", group_users_create_path(group_id: @group.id, user_id: @users.user.id), class: "btn btn-danger" %></td>
+					<td><%= link_to "招待ページへ", group_show_path(user.id), class: "btn btn-danger" %></td>
 				<% end %>
 				<% end %>
 

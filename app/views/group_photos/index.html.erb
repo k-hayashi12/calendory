@@ -1,5 +1,4 @@
-<h3>アルバム</h3>
 <% @group_event.group_photos.each do |photo| %>
-<%= image_tag photo.group_photo_image_id.to_s, class: "user_image" %>
-<%= link_to "削除", group_event_group_photos_path(@group_event), method: :delete, "data-confirm" => "本当に削除しますか", class: "btn btn-danger" %>
+	<%= image_tag photo.group_photo_image_id.to_s, class: "album_image" %>
+	<%= link_to "削除", group_photo_destroy_path(photo), method: :delete, "data-confirm" => "本当に削除しますか", class: "delete" %>
 <% end %>

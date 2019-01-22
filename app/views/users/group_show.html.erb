@@ -1,0 +1,16 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-1">
+		</div>
+
+		<div class="col-lg-9">
+			<h2>招待画面</h2><br>
+			<%= image_tag @user.user_image_id.to_s , class: "user_image" %>
+			<%= @user.name %>
+			<%= form_for :GroupeUser do |f| %>
+				<%= f.select :group_id, @group_users.all.map { |e| [e.group.group_name] } %>
+				 <%= f.submit "招待" %>
+				<% end %>
+		</div>
+	</div>
+</div>

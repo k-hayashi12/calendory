@@ -21,11 +21,12 @@ class GroupPhotosController < ApplicationController
 	end
 
 	def destroy
-		@group_event = GroupEvent.find(params[:group_event_id])
 		@group_photo = GroupPhoto.find(params[:id])
+		@group_event = @group_photo.group_event
 		@group_photo.destroy
 		redirect_to group_event_path(@group_event.id)
 	end
+
 
 	private
 

@@ -16,7 +16,6 @@
 				</div>
 
 			<table>
-				<thead>
 					<h3 class="group"><strong>参加中のカレンダー</strong></h3>
 					<table class="table table-hover">
 						<% @group_users.each do |groupe| %>
@@ -25,7 +24,10 @@
 						</tr>
 						<% end %>
 					</table>
-				</thead>
+
+					<div class="edit_user">
+						<%= link_to "グループ招待", users_path, class: "btn btn-primary" %>
+					</div>
 			</table>
 		</div>
 
@@ -40,7 +42,7 @@
 
 		  		<% events.each do |event| %>
    					<div>
-      					<%= link_to event.event_title, event %>
+      					<%= link_to event.event_title, event_path(event) %>
    					</div>
  				<% end %>
 			<% end %>
