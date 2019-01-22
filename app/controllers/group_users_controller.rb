@@ -5,9 +5,8 @@ class GroupUsersController < ApplicationController
 
 	def create
 		@user = User.find(params[:id])
-		@group = Group.find(params[:id])
+		@group = Group.find_by(group_name: params[:GroupeUser][:group_id])
 		@groupe_user = GroupeUser.create(user_id: @user.id, group_id: @group.id)
-		binding.pry
 		redirect_to group_path(@group.id)
 	end
 

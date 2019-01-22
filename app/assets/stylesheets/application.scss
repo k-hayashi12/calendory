@@ -106,6 +106,8 @@ body{
 	margin: 20px 5px;
 	width: 250px;
 	height: 250px;
+	object-fit: contain;
+	background-color:rgba(230,228,221,0.7);
 }
 
 .edit_user {
@@ -180,7 +182,23 @@ body{
 	margin: 50px;
 }
 
+/* イベント作成　*/
+
+.event {
+	margin: 100px 0 0 250px;
+	font-size: 20px;
+}
+
 /* イベント詳細ページ */
+
+.time {
+	margin: 20px 0 0 270px;
+	font-size: 20px;
+}
+
+.mk_event {
+	margin: 20px 0 0 370px;
+}
 
 .event_title {
 	text-align: center;
@@ -279,28 +297,52 @@ body{
 
 /* 入力フォーム　*/
 
+.font {
+	font-size: 20px;
+}
+
 .form {
 	margin: 250px 0 50px 250px;
+	font-size: 18px;
 }
 
 .form1 {
 	width: 300px;
-	margin: 10px 0 0 100px;
+	margin: 10px -26px 0 100px;
+	font-size: 20px;
 }
 
 .form2 {
 	width: 300px;
 	margin: 30px 0 0 30px;
+	font-size: 20px;
 }
 
 .form3 {
 	width: 300px;
-	margin: 30px 0 0 70px;
+	margin: 30px -18px 0 70px;
+	font-size: 20px;
 }
 
 .form4 {
 	margin-top: 50px;
+	font-size: 20px;
 }
+
+.form5 {
+	font-size: 20px;
+}
+
+.form6 {
+	font-size: 20px;
+	margin: 30px 0 0 270px;
+}
+
+.edit_event_laber {
+	font-size: 20px;
+	margin: 0 20px 0 170px;
+}
+
 
 /* アルバム　*/
 
