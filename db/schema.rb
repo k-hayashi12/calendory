@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_09_114627) do
+ActiveRecord::Schema.define(version: 2019_01_23_073013) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "event_id"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2019_01_09_114627) do
     t.text "group_comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "group_events", force: :cascade do |t|

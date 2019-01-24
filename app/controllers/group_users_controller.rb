@@ -8,6 +8,7 @@ class GroupUsersController < ApplicationController
 		@group = Group.find_by(group_name: params[:GroupeUser][:group_id])
 		@groupe_user = GroupeUser.create(user_id: @user.id, group_id: @group.id)
 		redirect_to group_path(@group.id)
+		flash[:success] = "#{@user.name}を#{@group.group_name}に招待しました。"
 	end
 
 	def index
@@ -20,6 +21,7 @@ class GroupUsersController < ApplicationController
 		@group_user = GroupeUser.find_by(group_id: @group, user_id: @user)
 		@group_user.destroy
 		redirect_to group_path
+		flash[:danger] = "#{@user.name}が#{@group.group_name}から退室しました。"
 	end
 
 	private

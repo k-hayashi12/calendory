@@ -1,5 +1,7 @@
 <div class ="container">
 	<div class ="row">
+			<%= link_to "グループページへ戻る", group_path(@group_event.group.id), method: :delete, "data-confirm" => "本当に削除しますか", class: "btn btn-default", style: "margin-top: 10px;" %>
+			<%= link_to "削除", group_event_path(@group_event.id), method: :delete, "data-confirm" => "本当に削除しますか", class: "btn btn-default", style: "margin-top: 10px;" %>
 		<div class ="col-lg-9">
 			<h3 class="index"><span>イベント名</span></h3>
 			<p class= "event_title"><%= @group_event.group_event_title %></p>
@@ -19,21 +21,21 @@
 			  </div>
 			</div>
 			<h3 class="index"><span>日記一覧</span></h3>
+			<% @group_event.group_comments.each do |comment| %>
+				<%= image_tag comment.user.user_image_id.to_s, class: "comment_icon" %>
+				<%= link_to comment.group_comment.truncate(34), group_event_group_comment_path(group_event_id: @group_event.id, id: comment.id), class: "comment_list" %></br>
+			<% end %>
 		</div>
 		<div class ="col-lg-3">
-			<%= link_to "イベント編集", edit_group_event_path, class: "edit_event btn btn-default" %>
-			<%= link_to "写真を追加", new_group_event_group_photo_path(@group_event), class: "add_photo btn btn-default" %>
-			<%= link_to "アルバムを開く", group_event_group_photos_path(@group_event), class: "open_album btn btn-default" %>
-			<%= link_to "日記を書く", new_group_event_group_comment_path(@group_event), class: "add_comment btn btn-default" %>
+			<%= link_to "イベント編集", edit_group_event_path, class: "g_edit_event btn btn-danger" %>
+			<%= link_to "写真を追加", new_group_event_group_photo_path(@group_event), class: "add_photo btn btn-primary" %>
+			<%= link_to "アルバムを開く", group_event_group_photos_path(@group_event), class: "open_album btn btn-success" %>
+			<%= link_to "日記を書く", new_group_event_group_comment_path(@group_event), class: "add_comment btn btn-info" %>
 	</div>
-	<%= link_to '戻る', :back , class: "btn btn-default" %>
 </div>
-
-
 
 <script type="text/javascript">
 $( document ).ready(function( $ ) {
-  console.log("sssss")
   $('#thumb-h').sliderPro({
     width:600,//横幅
     buttons: false,//ナビゲーションボタン

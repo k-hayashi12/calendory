@@ -32,6 +32,18 @@
 }
 
 /* ヘッダーとフッター　*/
+
+.alert-notice {
+	background-color: #CCFFFF;
+}
+
+.flash {
+  	float:left;
+  	text-align: center;
+	width: 100%;
+	font-size: 20px;
+}
+
 header {
 	width: 100%;
 	height: 70px;
@@ -66,7 +78,7 @@ footer {
 }
 
 /* トップページに関する指定 */
-.top{
+.top {
 	width: 100vw;
   	height: 100vh;
   	background: rgba(255,255,255,0.5);
@@ -78,22 +90,58 @@ footer {
 	color: white;
 }
 
-.introduction{
+.introduction {
 	text-align: center;
 	padding-top: 150px;
 	width: 800px;
   	margin: auto;
 }
 
-.login{
+.title {
+	font-family: cursive;
+	font-size: 120px;
+}
+
+.maegaki {
+	margin-top: 20px;
+	font-size: 20px;
+}
+
+.login {
 	width: 300px;
-	margin: auto;
+	margin: 30px auto;
+	font-size: 30px;
 	background-color:rgba(230,228,221,0.7);
   	border-radius: 5px;
 }
 
+.field-set {
+	text-align: center;
+	font-size: 20px;
+	margin: 100px;
+}
+
+.field {
+	margin-top: 20px;
+}
+
+.sign_up {
+	background: linear-gradient(transparent 50%, #99CCFF 50%);
+	width: 120px;
+    margin-left: 560px;
+    font-weight: 600;
+}
+
+.note {
+    font-size: 15px;
+    float: left;
+    margin-left: 150px;
+    background-color:rgba(255,126,71,0.6);
+  	border-radius: 5px;
+}
+
 /* 背景に関する指定 */
-body{
+body {
 	background-image: url("backgroud.png");
 	background-size: cover;
 	background-position: center center;
@@ -101,13 +149,13 @@ body{
 }
 
 /* user詳細ページ */
-.user_image{
-	padding: 10px 15px 0px 15px;
+.user_image {
+	padding: 0 15px 0px 15px;
 	margin: 20px 5px;
 	width: 250px;
-	height: 250px;
+	height: 200px;
 	object-fit: contain;
-	background-color:rgba(230,228,221,0.7);
+	background-color:rgba(82,62,75,0.2);
 }
 
 .edit_user {
@@ -122,6 +170,7 @@ body{
 
 .group_title_list {
 	text-align: center;
+	font-size: 20px;
 }
 
 .calendar {
@@ -207,7 +256,7 @@ body{
 }
 
 .edit_event {
-	margin-top: 70px;
+	margin-top: 30px;
 	margin-left: 70px;
 }
 
@@ -223,6 +272,11 @@ body{
 
 .add_comment {
 	margin-top: 350px;
+	margin-left: 70px;
+}
+
+.g_edit_event {
+	margin-top: 30px;
 	margin-left: 70px;
 }
 
@@ -262,6 +316,17 @@ body{
     margin: 20px 0px;
     width: 437px;
     height: 330px;
+}
+
+.comment_icon {
+	margin: 0 0 15px 35px;
+	width: 60px;
+	height: 60px;
+}
+
+.comment_list {
+	font-size: 20px;
+	margin-left: 15px;
 }
 
 /* 検索結果の画像サイズ */
@@ -338,6 +403,16 @@ body{
 	margin: 30px 0 0 270px;
 }
 
+.form7 {
+	font-size: 20px;
+	margin-top: 20px;
+}
+
+.form8 {
+	font-size: 15px;
+	margin: 300px 0 0 300px;
+}
+
 .edit_event_laber {
 	font-size: 20px;
 	margin: 0 20px 0 170px;
@@ -346,7 +421,75 @@ body{
 
 /* アルバム　*/
 
-
 .delete {
 	margin-top: 15px;
+}
+
+.post_image {
+	text-align: center;
+}
+
+.post_image1 {
+	width: 250px;
+	margin: 50px 0 0 300px;
+	background: linear-gradient(transparent 50%, #99CCFF 50%);
+}
+
+/* 日記 */
+
+.diary_title {
+	text-align: center;
+	margin: 50px 0 0 0;
+	font-size: 20px;
+}
+
+.comment_show {
+	font-size: 20px;
+	margin: 2em auto;
+	padding: 1em;
+	width: 90%; /* ボックス幅 */
+	background-color: #EEFFFF; /* ボックス背景色 */
+	color: #666; /* 文章色 */
+	box-shadow: 0 0 5px 1px #c0c0c0; /* 影 */
+	border-radius: 10px; /* 角の丸み */
+}
+
+.comment_name {
+	font-weight: 600;
+	margin-left: 325px;
+	width: 200px;
+	background: linear-gradient(transparent 50%, #99CCFF 50%);
+}
+
+.edit_group_event {
+	margin: 100px;
+}
+
+/* 検索画面 */
+
+.search_form {
+	margin: 20px 0 0 30px;
+	width: 300px;
+}
+
+.search_commit {
+	padding: 10px 15px 0px 15px;
+	margin: 20px 0 20px 250px;
+	width: 130px;
+	height: 110px;
+}
+
+.syoutai {
+	margin-left: 15px;
+}
+
+.post_image2 {
+	width: 600px;
+	margin: 50px 0 0 120px;
+	background: linear-gradient(transparent 50%, #99CCFF 50%);
+}
+
+.select_group {
+	width: 500px;
+	font-size: 20px;
 }

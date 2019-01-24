@@ -9,6 +9,7 @@ class User < ApplicationRecord
          has_many :events, dependent: :destroy
          has_many :groupe_users, dependent: :destroy
          has_many :groups, through: :group_users
+         has_many :group_comments, dependent: :destroy
 
 
   def self.search(search) #self.でクラスメソッドとしている

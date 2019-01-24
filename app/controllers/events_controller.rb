@@ -13,6 +13,7 @@ class EventsController < ApplicationController
 		@event.user_id = current_user.id
 		@event.save
 		redirect_to user_path(@event.user_id)
+		flash[:success] = "イベントを登録しました。"
 	end
 
 	def edit
@@ -23,9 +24,14 @@ class EventsController < ApplicationController
 		@event = Event.find(params[:id])
 		@event.update(event_params)
 		redirect_to event_path(@event.id)
+		flash[:info] = "イベント名を変更しました。"
 	end
 
 	def destroy
+		@event = Event.find(params[:id])
+		@event.destroy
+		redirect_to user_path(@event.user_id)
+		flash[:danger] = "イベントを削除しました。"
 	end
 
 

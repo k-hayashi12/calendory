@@ -1,0 +1,14 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-1">
+		</div>
+
+		<div class="col-lg-9 diary_title">
+			<h3 class="post_image1">日記投稿</h3></br>
+				<%= form_with url: group_event_group_comments_path(@group_event.id), method: :post  do |form| %>
+			    <%= form.text_area :group_comment, placeholder:"400字以内で入力してください", style: "width: 500px; height: 250px; font-size: 20px; margin-left:50px;" %></br>
+			    <%= form.submit "投稿", class: "btn btn-primary", style: "width: 120px; font-size:20px;" %>
+			    <% end %>
+		</div>
+	</div>
+</div>

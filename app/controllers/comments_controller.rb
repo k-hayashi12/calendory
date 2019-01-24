@@ -16,6 +16,7 @@ class CommentsController < ApplicationController
 		@comment.event_id = @event.id
 		@comment.save
 		redirect_to event_path(@comment.event_id)
+		flash[:success] = "日記を投稿しました。"
 	end
 
 	def edit
@@ -26,6 +27,7 @@ class CommentsController < ApplicationController
 		@comment = Comment.find(params[:id])
 		@comment.update(comment_params)
 		redirect_to event_path(@comment.event_id)
+		flash[:info] = "日記を投稿しました。"
 	end
 
 	def destroy
@@ -33,6 +35,7 @@ class CommentsController < ApplicationController
 		@comment = Comment.find(params[:id])
 		@comment.destroy
 		redirect_to event_path(@event.id)
+		flash[:danger] = "日記を削除しました。"
 	end
 
 	private

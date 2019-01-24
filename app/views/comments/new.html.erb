@@ -3,23 +3,12 @@
 		<div class="col-lg-1">
 		</div>
 
-		<div class="col-lg-9">
-			<h3>日記を書く</h3>
-			<%= form_with url: event_comments_path(@event.id), method: :post  do |form| %>
-
-			  <div class="event_title">
-			    <%= form.label :内容 %>
-			    <%= form.text_area :comment, placeholder:"400字以内" %>
-			  </div>
-
-			  <div class="submit">
-			    <%= form.submit %>
-			  </div>
-
-			<% end %>
+		<div class="col-lg-9 diary_title">
+			<h2 class="post_image1">日記投稿</h2></br>
+				<%= form_with url: event_comments_path(@event.id), method: :post  do |form| %>
+			    <%= form.text_area :comment, placeholder:"400字以内で入力してください", style: "width: 500px; height: 250px; font-size: 20px; margin-left:50px;" %></br>
+			    	<%= form.submit "投稿", class: "btn btn-primary", style: "width: 120px; font-size:20px;" %>
+				<% end %>
 		</div>
-
 	</div>
 </div>
-
-<%= link_to '戻る', :back, class: "btn btn-default"%>
