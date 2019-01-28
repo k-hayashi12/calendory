@@ -19,3 +19,18 @@
 
 
 /* slider proの設定 */
+
+document.addEventListener("turbolinks:load", function(){
+$(document).ready(function(){
+	setTimeout(function(){
+		$('#flash').fadeOut("slow")
+		}, 4500);
+	});
+
+$(document).ready(function(){
+	setTimeout(function(){
+		$('alert-notice').fadeOut("slow")
+		}, 4500);
+	});
+
+});

@@ -10,6 +10,7 @@ class GroupEventsController < ApplicationController
 		@group_event.group_id = @group.id
 		@group_event.save
 		redirect_to group_path(@group_event.group_id)
+		flash[:success] = "イベントを登録しました。"
 	end
 
 	def show
@@ -24,9 +25,14 @@ class GroupEventsController < ApplicationController
 		@group_event = GroupEvent.find(params[:id])
 		@group_event.update(group_event_params)
 		redirect_to group_event_path(@group_event.id)
+		flash[:info] = "イベント名を変更しました。"
 	end
 
 	def destroy
+		@group_event = GroupEvent.find(params[:id])
+		@group_event.destroy
+		redirect_to group_path(@group_event.group_id)
+		flash[:danger] = "グループのイベントを削除しました。"
 	end
 
 

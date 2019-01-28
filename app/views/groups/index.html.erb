@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-1">
+		</div>
+
+		<div class="col-lg-9 diary_title">
+			<h3 class="post_image1">ユーザー検索</h3>
+				<%= form_tag users_path, :method => 'get' do %>
+					<p>
+				    <%= text_field_tag :search, params[:search], placeholder: "検索用IDを入力してください", class: "search_form" %>
+				    <%= submit_tag "検索", :search_number => nil, class: "btn btn-primary" %>
+					</p>
+				<% end %>
+
+			<table>
+				<% if @users %>
+				<% @users.each do |user| %>
+					<th><%= image_tag user.user_image_id.to_s, class: "search_commit" %></th>
+					<td><%= user.name %></td>
+					<td><%= link_to "招待ページへ", group_show_path(user.id), class: "btn btn-danger syoutai" %></td>
+				<% end %>
+				<% end %>
+
+		</div>
+
+	</div>
+</div>

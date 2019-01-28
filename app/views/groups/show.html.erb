@@ -13,8 +13,13 @@
 								<td><%= link_to "退室", group_users_destroy_path(group_id: @group.id, user_id: groupe.user.id), method: :delete, "data-confirm" => "本当に削除しますか", class: "close" %></td>
 					   		</tr>
 					   	<% end %>
+
 					</table>
 				</thead>
+					<div class="edit_user">
+						<%= link_to "グループ招待", users_path, class: "btn btn-success", style: "margin-top: 20px;" %>
+						<%= link_to "グループを削除する", group_path(@group.id), method: :delete, "data-confirm" => "本当に削除しますか", class: "btn btn-danger", style: "margin-top: 20px;" %>
+					</div>
 			</table>
 		</div>
 
@@ -30,7 +35,7 @@
 
 		  		<% group_events.each do |group_event| %>
    					<div>
-      					<%= link_to group_event.group_event_title, group_event %>
+      					<%= link_to group_event.group_event_title.truncate(7), group_event %>
    					</div>
  				<% end %>
 			<% end %>

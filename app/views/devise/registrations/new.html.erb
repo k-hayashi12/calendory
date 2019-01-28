@@ -1,39 +1,46 @@
-<h2>Sign up</h2>
+<div class="field-set">
+  <h2 class="sign_up">新規登録</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "氏名", placeholder: "" %>
-  </div>
+    <div class="field">
+      <%= f.label :"氏名" %><br />
+      <%= f.text_field :name, autofocus: true, autocomplete: "氏名", placeholder: "氏名またはニックネームを入力してください", style: "width: 420px;" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "メールアドレス" %>
-  </div>
+    <div class="field">
+      <%= f.label :メールアドレス %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "メールアドレス", placeholder: "メールアドレスを入力してください", style: "width: 420px;" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :search_number %><br />
-    <%= f.text_field :search_number, autofocus: true, autocomplete: "グループ招待用検索ID", placeholder: "半角英数で6文字以上" %>
-  </div>
+    <div class="field">
+      <%= f.label :"ユーザー検索ID" %><br />
+      <%= f.text_field :search_number, autofocus: true, autocomplete: "ユーザー検索ID", placeholder: "半角英数6文字以上で入力してください", style: "width: 420px;" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :パスワード %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "半角英数6文字以上で入力してください", style: "width: 420px;" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :確認用パスワード%><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder: "確認のため、もう一度入力してください", style: "width: 420px;" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "登録", class: "btn btn-primary" %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= f.submit "登録", class: "btn btn-primary", style: "margin-top: 20px; width: 100px; font-size: 20px;" %>
+    </div>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= link_to "ログインはこちら", new_user_session_path, style: "margin-top: 50px;" %>
+
+</div>
+
+      <div class ="note">
+        <p>(注)  検索用IDは入力しなくても登録できますが、登録することでユーザー検索ができるようになりグループカレンダーが利用できます。(ログイン後からでも登録できます)</p>
+      </div>

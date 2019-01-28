@@ -14,6 +14,7 @@ class GroupPhotosController < ApplicationController
 		@group_photo.group_event_id = @group_event.id
 		@group_photo.save
 		redirect_to group_event_path(@group_photo.group_event_id)
+		flash[:info] = "写真を投稿しました。"
 	end
 
 	def index
@@ -25,6 +26,7 @@ class GroupPhotosController < ApplicationController
 		@group_event = @group_photo.group_event
 		@group_photo.destroy
 		redirect_to group_event_path(@group_event.id)
+		flash[:danger] = "写真を削除しました。"
 	end
 
 

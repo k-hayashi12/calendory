@@ -1,7 +1,22 @@
-<h1>Group#new</h1>
-    <%= form_for @group, url: groups_path, html: { method: :post } do |f| %>
-    	<%= f.label "グループカレンダー名" %>
-        <%= f.text_field :group_name %>
+<div class="container">
+  <div class="row">
+        <div class="col-lg-1">
+        </div>
 
-        <%= f.submit "登録" %>
-    <% end %>
+        <div class="col-lg-9">
+	          <%= form_for @group, url: groups_path, html: { method: :post } do |f| %>
+
+	            <div class="event">
+	              <%= f.label "グループ名" %>
+	              <%= f.text_field :group_name %>
+	            </div>
+
+
+            <div class="mk_event submit">
+              <%= f.submit "登録", class: "btn btn-primary", style: "width: 120px;" %>
+            </div>
+          <% end %>
+      </div>
+
+  </div>
+</div>

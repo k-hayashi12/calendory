@@ -1,0 +1,16 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-1">
+		</div>
+
+		<div class="col-lg-9 diary_title">
+			<div class="comment_name"><%= @group_comment.user.name + "さんの日記" %></div>
+			<%= image_tag @group_comment.user.user_image_id.to_s, class: "user_image" %>
+			<div class="comment_show"><%= @group_comment.group_comment %></div>
+				<% if @group_comment.user == current_user %>
+				<%= link_to "編集",  edit_group_event_group_comment_path, class: "btn btn-danger", style: "width: 120px; font-size:20px;" %>
+				<% end %>
+		</div>
+
+	</div>
+</div>

@@ -3,12 +3,11 @@
 		<div class="col-lg-1">
 		</div>
 
-		<div class="col-lg-9">
+		<div class="col-lg-9" >
 				<%= form_for(@event) do |f| %>
 					<laber class="edit_event_laber">イベント名</laber><%= f.text_field :event_title, class: "form5" %></br>
-					<%= f.submit "編集完了", class: "form6 btn btn-primary"%>
+					<%= f.submit "編集", class: "form6 btn btn-primary"%>
 				<% end %>
 		</div>
 	</div>
-	<%= link_to '戻る', :back, class: "btn btn-default" %>
 </div>
