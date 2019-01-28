@@ -11,6 +11,7 @@ class PhotosController < ApplicationController
 		@photo.event_id = @event.id
 		@photo.save
 		redirect_to event_path(@photo.event_id)
+		flash[:success] = "写真が投稿されました。"
 	end
 
 	def index
@@ -22,6 +23,7 @@ class PhotosController < ApplicationController
 		@event = @photo.event
 		@photo.destroy
 		redirect_to event_path(@event.id)
+		flash[:danger] = "写真を削除しました。"
 	end
 
 	private

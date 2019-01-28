@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
 
+
 	def new
 		@group = Group.new
 	end
@@ -8,9 +9,12 @@ class GroupsController < ApplicationController
 		@group = Group.new(group_params)
 		if @group.save
 			@groupe_user = GroupeUser.create(user_id: current_user.id, group_id: @group.id)
+			redirect_to group_path(@group.id)
+			flash[:success] = "#{@group.group_name}が作成されました。"
+		else
+			redirect_to new_group_path(@group.id)
+			flash[:danger] = "無記入の状態では登録できません。"
 		end
-		redirect_to group_path(@group.id)
-		flash[:success] = "グループが作成されました。"
 	end
 
 	def show
@@ -22,6 +26,9 @@ class GroupsController < ApplicationController
 
 	def index
 		@users = User.search(params[:search])
+		if @users.blank?
+			flash.now[:success] = "検索用IDは正確に入力してください。"
+		end
 	end
 
 	def edit
@@ -30,9 +37,13 @@ class GroupsController < ApplicationController
 
 	def update
 		@group = Group.find(params[:id])
-	  	@group.update(group_params)
-	  	redirect_to group_path(@group.id)
-	  	flash[:info] = "グループ名が変更されました。"
+	  	if @group.update(group_params)
+	  		redirect_to group_path(@group.id)
+	  		flash[:info] = "グループ名が#{@group.group_name}に変更されました。"
+	  	else
+	  		redirect_to edit_group_path(@group.id)
+	  		flash[:danger] = flash[:danger] = "無記入の状態では登録できません。"
+	  	end
 	end
 
 	def destroy

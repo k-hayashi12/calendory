@@ -34,7 +34,7 @@
 /* ヘッダーとフッター　*/
 
 .alert-notice {
-	background-color: #CCFFFF;
+	background-color: #dff0d8;
 }
 
 .flash {
@@ -246,7 +246,7 @@ body {
 }
 
 .mk_event {
-	margin: 20px 0 0 370px;
+	margin: 20px 0 0 360px;
 }
 
 .event_title {
@@ -367,7 +367,7 @@ body {
 }
 
 .form {
-	margin: 250px 0 50px 250px;
+	margin: 120px 0 50px 250px;
 	font-size: 18px;
 }
 
@@ -400,7 +400,7 @@ body {
 
 .form6 {
 	font-size: 20px;
-	margin: 30px 0 0 270px;
+	margin: 30px 0 0 300px;
 }
 
 .form7 {
@@ -410,7 +410,12 @@ body {
 
 .form8 {
 	font-size: 15px;
-	margin: 300px 0 0 300px;
+	margin: 30px 0 0 300px;
+}
+
+.form9 {
+	margin: 200px 0 0 1100px;
+	font-size: 20px;
 }
 
 .edit_event_laber {
@@ -439,7 +444,7 @@ body {
 
 .diary_title {
 	text-align: center;
-	margin: 50px 0 0 0;
+	margin: 50px 0 0 20px;
 	font-size: 20px;
 }
 
@@ -492,4 +497,12 @@ body {
 .select_group {
 	width: 500px;
 	font-size: 20px;
+}
+
+.new_group {
+	margin-left: 20px;
+}
+
+.edit_group {
+	margin-left: 40px;
 }

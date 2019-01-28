@@ -4,4 +4,5 @@ class Event < ApplicationRecord
 	has_many :photos, dependent: :destroy
 	has_many :comments, dependent: :destroy
 
+	validates :event_title, presence: true
 end

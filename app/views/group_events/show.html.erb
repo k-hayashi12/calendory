@@ -1,6 +1,6 @@
 <div class ="container">
 	<div class ="row">
-			<%= link_to "グループページへ戻る", group_path(@group_event.group.id), method: :delete, "data-confirm" => "本当に削除しますか", class: "btn btn-default", style: "margin-top: 10px;" %>
+			<%= link_to "グループページへ戻る", group_path(@group_event.group.id), class: "btn btn-default", style: "margin-top: 10px;" %>
 			<%= link_to "削除", group_event_path(@group_event.id), method: :delete, "data-confirm" => "本当に削除しますか", class: "btn btn-default", style: "margin-top: 10px;" %>
 		<div class ="col-lg-9">
 			<h3 class="index"><span>イベント名</span></h3>

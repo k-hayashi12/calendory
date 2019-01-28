@@ -4,12 +4,12 @@
 		</div>
 
 		<div class="col-lg-9 diary_title">
-			<h2 class="post_image2">招待したいグループをしてください</h2><br>
+			<h2 class="post_image2">グループを選択してください</h2><br>
 			<%= image_tag @user.user_image_id.to_s , class: "user_image" %>
 			<%= @user.name %>
 			<%= form_for :GroupeUser do |f| %>
 				<%= f.select :group_id, @group_users.all.map { |e| [e.group.group_name] } %>
-				 <%= f.submit "招待", class: "btn btn-danger" %>
+				 <%= f.submit "招待", class: "btn btn-danger", style: "margin: 0 20px 8px 20px ;" %>
 				<% end %>
 		</div>
 	</div>

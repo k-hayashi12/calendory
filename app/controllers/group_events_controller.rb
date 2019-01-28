@@ -8,9 +8,13 @@ class GroupEventsController < ApplicationController
 		@group = Group.find(params[:group_id])
 		@group_event = GroupEvent.new(group_event_params)
 		@group_event.group_id = @group.id
-		@group_event.save
-		redirect_to group_path(@group_event.group_id)
-		flash[:success] = "イベントを登録しました。"
+		if @group_event.save
+			redirect_to group_path(@group_event.group_id)
+			flash[:success] = "イベントを登録しました。"
+		else
+			redirect_to new_event_path(@event.id)
+			flash[:danger] = "イベント名を入力してください。"
+		end
 	end
 
 	def show
@@ -23,9 +27,13 @@ class GroupEventsController < ApplicationController
 
 	def update
 		@group_event = GroupEvent.find(params[:id])
-		@group_event.update(group_event_params)
-		redirect_to group_event_path(@group_event.id)
-		flash[:info] = "イベント名を変更しました。"
+		if @group_event.update(group_event_params)
+			redirect_to group_event_path(@group_event.id)
+			flash[:info] = "イベント名を変更しました。"
+		else
+			redirect_to edit_group_event_path(@group_event.id)
+			flash[:danger] = "イベント名を入力してください。"
+		end
 	end
 
 	def destroy

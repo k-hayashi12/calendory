@@ -7,11 +7,11 @@
 				<%= form_for(@group) do |f| %>
 					<div class="event">
 						<%= f.label "グループ名" %>
-						<%= f.text_field :group_name %><br/>
+						<%= f.text_field :group_name, placeholder:"グループ名を入力してください", style: "width: 320px;" %><br/>
 					</div>
 
 					<div class="mk_event submit">
-					<%= f.submit "編集", class: "btn btn-primary", style: "width: 120px;"%>
+					<%= f.submit "編集", class: "btn btn-danger", style: "width: 120px;"%>
 					</div>
 					<% end %>
 		</div>

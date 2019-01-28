@@ -1,5 +1,17 @@
 class EventsController < ApplicationController
 
+before_action :authenticate_user!
+
+before_action :ensure_correct_user, {only: [:show, :edit, :update, :destroy]}
+
+  def ensure_correct_user
+    @event = Event.find(params[:id])
+    if @event.user.id != current_user.id
+        redirect_to user_path(current_user.id)
+        flash[:danger] = "権限がありません。"
+    end
+  end
+
 	def new
 		@event = Event.new
 	end
@@ -11,9 +23,13 @@ class EventsController < ApplicationController
 	def create
 		@event = Event.new(event_params)
 		@event.user_id = current_user.id
-		@event.save
-		redirect_to user_path(@event.user_id)
-		flash[:success] = "イベントを登録しました。"
+		if @event.save
+			redirect_to user_path(@event.user_id)
+			flash[:success] = "イベントを登録しました。"
+		else
+			redirect_to new_event_path(@event.id)
+			flash[:danger] = "イベント名を入力してください。"
+		end
 	end
 
 	def edit
@@ -22,9 +38,13 @@ class EventsController < ApplicationController
 
 	def update
 		@event = Event.find(params[:id])
-		@event.update(event_params)
-		redirect_to event_path(@event.id)
-		flash[:info] = "イベント名を変更しました。"
+		if @event.update(event_params)
+			redirect_to event_path(@event.id)
+			flash[:info] = "イベント名を変更しました。"
+		else
+			redirect_to edit_event_path(@event.id)
+			flash[:danger] = "イベント名を入力してください。"
+		end
 	end
 
 	def destroy

@@ -6,9 +6,15 @@ class GroupUsersController < ApplicationController
 	def create
 		@user = User.find(params[:id])
 		@group = Group.find_by(group_name: params[:GroupeUser][:group_id])
+		a = GroupeUser.where(user_id: @user.id, group_id: @group.id)
+		if a.exists?
+			redirect_to group_show_path
+			flash[:danger] = "招待済みユーザーです"
+		else
 		@groupe_user = GroupeUser.create(user_id: @user.id, group_id: @group.id)
 		redirect_to group_path(@group.id)
 		flash[:success] = "#{@user.name}を#{@group.group_name}に招待しました。"
+		end
 	end
 
 	def index
