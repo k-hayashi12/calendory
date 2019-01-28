@@ -5,8 +5,8 @@
 
 		<div class="col-lg-9">
 				<%= form_for(@group_event) do |f| %>
-					<laber class="edit_event_laber">イベント名</laber><%= f.text_field :group_event_title, class: "form5" %></br>
-					<%= f.submit "編集", class: "form6 btn btn-primary"%>
+					<laber class="edit_event_laber">イベント名</laber><%= f.text_field :group_event_title, placeholder: "イベント名を入力してください", class: "form5", style: "width: 300px;" %></br>
+					<%= f.submit "編集", class: "form6 btn btn-danger"%>
 				<% end %>
 		</div>
 	</div>

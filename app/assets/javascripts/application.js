@@ -23,13 +23,17 @@
 document.addEventListener("turbolinks:load", function(){
 $(document).ready(function(){
 	setTimeout(function(){
-		$('#flash').fadeOut("slow")
+		$('#flash').fadeOut("slow", function(){
+			$(this).remove();
+		});
 		}, 4500);
 	});
 
 $(document).ready(function(){
 	setTimeout(function(){
-		$('alert-notice').fadeOut("slow")
+		$('alert-notice').fadeOut("slow", function(){
+			$(this).remove();
+		});
 		}, 4500);
 	});
 

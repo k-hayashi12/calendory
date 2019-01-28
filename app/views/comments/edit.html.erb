@@ -6,9 +6,9 @@
 		<div class="col-lg-9 diary_title">
 			<h2 class="post_image1">日記編集</h2><br>
 				<%= form_with url: event_comment_path(@comment.id), method: :patch  do |f| %>
-				<%= f.text_area :comment, style: "width: 500px; height: 250px; font-size: 20px;" %><br/>
-					<%= f.submit "編集完了", class: "btn btn-primary", style: "width: 120px; font-size:20px;"%>
-					<%= link_to "削除", event_comment_path(@comment.event_id), method: :delete, "data-confirm" => "本当に削除しますか", class: "btn btn-danger", style: "width: 120px; font-size:20px;" %>
+				<%= f.text_area :comment, placeholder:"400字以内で入力してください", style: "width: 500px; height: 250px; font-size: 20px;", value: @comment.comment %><br/>
+					<%= f.submit "編集完了", class: "btn btn-danger", style: "width: 120px; font-size:20px;"%>
+					<%= link_to "削除", event_comment_path(@comment.event_id), method: :delete, "data-confirm" => "本当に削除しますか", class: "btn btn-warning", style: "width: 120px; font-size:20px;" %>
 				<% end %>
 		</div>
 	</div>

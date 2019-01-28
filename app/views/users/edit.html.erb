@@ -6,11 +6,12 @@
 		<div class="col-lg-9">
 				<%= form_for(@user) do |f| %>
 					<%= f.file_field :user_image_id, class: "form" %>
-					<label class="font">氏名</label><%= f.text_field :name, class: "form1" %><br/>
-					<label class="font">メールアドレス</label><%= f.text_field :email, class: "form2" %><br/>
-					<label class="font">検索用ID</label><%= f.text_field :search_number, class: "form3" %><br/>
+					<label class="font">氏名</label><%= f.text_field :name, placeholder: "氏名またはニックネームを入力してください", class: "form1", style: "width: 420px;" %><br/>
+					<label class="font">メールアドレス</label><%= f.text_field :email, placeholder: "メールアドレスを入力してください", class: "form2", style: "width: 420px;" %><br/>
+					<label class="font">検索用ID</label><%= f.text_field :search_number, placeholder: "半角英数で6文字以上で入力してください", class: "form3", style: "width: 420px;" %><br/>
 
-					<%= f.submit "編集完了", class: "form4 btn btn-primary"%>
+					<%= f.submit "編集", class: "form4 btn btn-danger"%><br>
+					<%= link_to "退会", user_destroy_path(@user.id), method: :delete, "data-confirm" => "本当に退会してもよろしいですか？", class: "form9 btn btn-warning" %>
 				<% end %>
 		</div>
 	</div>

@@ -7,7 +7,7 @@
 			<h2 class ="post_image1">写真を投稿する</h2><br>
 				<%= form_with url: event_photos_path(@event.id) do |f| %>
 					<%= f.file_field :photo_image_id, class: "form8" %>
-					<%= f.submit "編集完了", class: "form7 btn btn-primary"%>
+					<%= f.submit "投稿", class: "form7 btn btn-primary"%>
 				<% end %>
 		</div>
 	</div>

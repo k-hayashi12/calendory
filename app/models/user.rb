@@ -11,6 +11,9 @@ class User < ApplicationRecord
          has_many :groups, through: :group_users
          has_many :group_comments, dependent: :destroy
 
+         validates :name, presence: true
+         validates :email, presence: true
+         validates :search_number, format: { with: /\A[a-z0-9]+\z/i }, uniqueness: true, length: { minimum: 6 }
 
   def self.search(search) #self.でクラスメソッドとしている
     if search # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索

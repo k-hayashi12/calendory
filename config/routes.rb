@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   delete '/groups/:id/user_destroy' => 'group_users#destroy', as: 'group_users_destroy'
   delete '/events/:id/photos' => 'photos#destroy', as: 'photo_destroy'
   delete '/group_events/:id/group_photos' => 'group_photos#destroy', as: 'group_photo_destroy'
+  delete '/users/:id/edit' => 'users#destroy', as:"user_destroy"
   devise_for :users
 
   resources :users, only:[:show, :edit, :update]
