@@ -1,17 +1,5 @@
 class EventsController < ApplicationController
 
-before_action :authenticate_user!
-
-before_action :ensure_correct_user, {only: [:show, :edit, :update, :destroy]}
-
-  def ensure_correct_user
-    @event = Event.find(params[:id])
-    if @event.user.id != current_user.id
-        redirect_to user_path(current_user.id)
-        flash[:danger] = "権限がありません。"
-    end
-  end
-
 	def new
 		@event = Event.new
 	end
