@@ -66,9 +66,9 @@ gem 'devise'
 gem "bootstrap-sass"
 gem "jquery-rails"
 gem 'carrierwave'
-gem 'dropzonejs-rails'
+# gem 'dropzonejs-rails'
 gem 'rmagick'
 gem "pry-rails"
 gem 'simple_calendar'
-gem 'ransack'
+# gem 'ransack'
 # gem 'jquery-ui-rails'
